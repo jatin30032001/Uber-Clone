@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import { useEffect } from 'react'
 import tw from "tailwind-styled-components"
 import Map from './components/Map'
+import Link from 'next/link'
 
 
 
@@ -27,10 +28,13 @@ export default function Home() {
         </Header>
 
         <ActionsButtons>
-
+           
+          
           <ActionButton>
             <ActionButtonImage
-              src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_863,h_485/f_auto,q_auto/products/carousel/UberX.png" />Ride</ActionButton>
+              src="http://i.ibb.co/cyvcpfF/uberx.png" />
+              <Link href="/search">Ride</Link></ActionButton>
+              
 
           <ActionButton>
             <ActionButtonImage
@@ -42,10 +46,13 @@ export default function Home() {
 
         </ActionsButtons>
 
-        
+
+             <InputButton>
+             Where to?
+             </InputButton>
+
 
       </ActionsItems>
-
     </Wrapper>
 
   )
@@ -81,9 +88,12 @@ const ActionsButtons = tw.div`
 flex
 `
 const ActionButton = tw.div`
- flex bg-gray-200 flex-1 m-1 h-32 items-center flex-col justify-center rounded-lg
+ flex bg-gray-200 flex-1 m-4 h-32 items-center flex-col justify-center rounded-lg
  transform hover:scale-105 transition text-xl
 `
 const ActionButtonImage = tw.img`
 h-3/5
+`
+const InputButton = tw.div`
+h-20 bg-gray-200 text-2xl p-4 flex items-center mt-8
 `
