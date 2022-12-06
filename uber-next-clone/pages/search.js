@@ -36,7 +36,7 @@ Saved Places
 </SavedPlaces>
 
 <ConfirmButton>
- Confirm Ride
+ Confirm Locations
 
 </ConfirmButton>
 
@@ -86,5 +86,5 @@ bg-gray-400 w-10 h-10 p-2 rounded-full mr-2
 `
 
 const ConfirmButton = tw.div`
- flex  items-center justify-center text-white bg-black mx-6 mt-6 p-1
+ flex  items-center justify-center text-white bg-black mx-8 mt-6 py-2  text-2xl cursor-pointer
 `
