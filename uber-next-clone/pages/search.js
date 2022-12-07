@@ -6,8 +6,8 @@ const Search = () => {
 
 const [pickup, setPickup] =useState("");
 const [dropoff, setDropoff]= useState("");
- console.log(pickup);
- console.log(dropoff);
+//  console.log(pickup);
+//  console.log(dropoff);
 
 
   return (

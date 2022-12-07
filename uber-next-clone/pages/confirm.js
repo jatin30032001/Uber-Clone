@@ -3,6 +3,7 @@ import tw from "tailwind-styled-components"
 import Map from './components/Map'
 import {useRouter} from 'next/router'
 import RideSelector from './components/RideSelector'
+import Link from 'next/link'
 
 const Confirm = () => {
 
@@ -11,8 +12,8 @@ const {pickup , dropoff} = router.query
 
 
 
-    const [pickupCoordinates, setPickupCoordinates]= useState(); 
-    const [dropoffCoordinates, setDropoffCoordinates]= useState();  
+    const [pickupCoordinates, setPickupCoordinates]= useState([0,0]); 
+    const [dropoffCoordinates, setDropoffCoordinates]= useState([0,0]);  
 
 
 const getPickupCordinates=(pickup)=>{
@@ -39,7 +40,7 @@ const getDropoffCordinates=(dropoff)=>{
     )
     .then(response=> response.json())
     .then(data=>{
-        console.log("DropOff")
+        // console.log("DropOff")
         setDropoffCoordinates(data.features[0].center);
     })
 }
@@ -58,13 +59,23 @@ useEffect(()=>{
 
   return (
     <Wrapper>
+        <Link href="/search">
+        
+        <ButtonContainer>
+   <BackButton src="https://img.icons8.com/ios-filled/50/000000/left.png"/>
+        </ButtonContainer>
+
+        </Link>
     <Map 
     pickupCoordinates={pickupCoordinates}
     dropoffCoordinates= {dropoffCoordinates}
     />
 
     <RideContainer>
-    <RideSelector/>
+    <RideSelector 
+    pickupCoordinates={pickupCoordinates}
+    dropoffCoordinates= {dropoffCoordinates}
+    />
 
         <ConfirmButtonContainer>
             <ConfirmButton>
@@ -93,4 +104,10 @@ border-t-2
 `
 const ConfirmButton = tw.div`
 bg-black text-white my-4 mx-4 py-4 text-center text-xl
+`
+const BackButton = tw.img`
+h-full object-contain
+`
+const ButtonContainer= tw.div`
+rounded-full absolute top-4 left-4 z-10 bg-white shadow-md cursor-pointer
 `
