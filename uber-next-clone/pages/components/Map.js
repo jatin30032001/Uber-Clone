@@ -56,6 +56,6 @@ if(props.pickupCoordinates && props.dropoffCoordinates){
 export default Map
 
 const Wrapper = tw.div`
-flex-1 bg-red-500
+flex-1 h-1/2
 
 `
