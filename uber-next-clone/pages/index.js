@@ -47,7 +47,9 @@ export default function Home() {
           <Profile>
             <Name>{user && user.name } </Name>
             <UserImage
-              src={user && user.photoUrl}/>
+              src={user && user.photoUrl} 
+              onClick ={()=> signOut(auth)}
+              />
           </Profile>
         </Header>
 
@@ -105,7 +107,7 @@ mr-4 w-20 text-sm
 `
 
 const UserImage = tw.img`
-h-12 w-12 rounded-full border border-gray-200 p-px
+h-12 w-12 rounded-full border border-gray-200 p-px cursor-pointer
 `
 
 const ActionsButtons = tw.div`

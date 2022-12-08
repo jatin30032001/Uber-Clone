@@ -78,9 +78,12 @@ useEffect(()=>{
     />
 
         <ConfirmButtonContainer>
+            <Link href="/RideConfirmation">
+           
             <ConfirmButton>
             Confirm UberX
             </ConfirmButton>
+            </Link>
     
         </ConfirmButtonContainer>
 

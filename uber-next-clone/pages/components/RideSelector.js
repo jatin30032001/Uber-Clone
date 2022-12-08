@@ -37,7 +37,7 @@ const RideSelector = () => {
                 <Service>Black</Service>
                 <Time>5 min away</Time>
             </CarDetails>
-            <Price>$24.00</Price>
+            <Price>$35.80</Price>
             </Car>
 
             <Car >
@@ -46,7 +46,7 @@ const RideSelector = () => {
                 <Service>Comfort</Service>
                 <Time>5 min away</Time>
             </CarDetails>
-            <Price>$24.00</Price>
+            <Price>$53.00</Price>
             </Car>
 
             <Car >
@@ -64,7 +64,7 @@ const RideSelector = () => {
                 <Service>Black SUV</Service>
                 <Time>5 min away</Time>
             </CarDetails>
-            <Price>$24.00</Price>
+            <Price>$70.00</Price>
             </Car>
 
            
