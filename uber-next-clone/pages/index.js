@@ -2,15 +2,38 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import tw from "tailwind-styled-components"
-import { useEffect } from 'react'
+import { useEffect , useState} from 'react'
 
 import Map from './components/Map'
 import Link from 'next/link'
-
+import {auth} from '../firebase'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { useRouter } from 'next/router'
 
 
 
 export default function Home() {
+
+  const [user , setUser] = useState(null);
+  const router = useRouter();
+
+  useEffect(()=>{
+    return onAuthStateChanged(auth, user =>{
+
+      if(user){
+        setUser({
+          name :user.displayName,
+          photoUrl :user.photoURL,
+        })
+      }
+
+      else {
+           setUser(null)
+           router.push('/login')
+      }
+
+    })
+  },[])
 
 
   return (
@@ -22,9 +45,9 @@ export default function Home() {
         <Header>
           <UberLogo src="https://logos-world.net/wp-content/uploads/2020/05/Uber-Logo-2018-present.jpg"></UberLogo>
           <Profile>
-            <Name>Jatin Raj </Name>
+            <Name>{user && user.name } </Name>
             <UserImage
-              src="https://preview.keenthemes.com/metronic-v4/theme/assets/pages/media/profile/profile_user.jpg"/>
+              src={user && user.photoUrl}/>
           </Profile>
         </Header>
 
