@@ -9,9 +9,9 @@ const RideSelector = () => {
    <Wrapper>
        <Title> Choose a ride or Swipe up for more</Title>
        <CarList>
-         {/* {carList.map((car)=>{
+         {/* {carList.map((car, index)=>{
 
-            <Car>
+            <Car key={index}>
             <CarImage src={car.imgUrl}/>
             <CarDetails>
                 <Service>{car.service}</Service>
